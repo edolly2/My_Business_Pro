@@ -1,0 +1,37 @@
+.red {
+    color: #800000;
+}
+
+.first-form-cont {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 50%;
+}
+
+form p {
+    padding: 2rem;
+}
+
+.in {
+    width: 100%;
+    clear: both;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.first-form-btn-cont {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.form-btns {
+    margin: 0 2rem;
+}
+
+.main-info-section {
+    padding: 4rem 0;
+}
