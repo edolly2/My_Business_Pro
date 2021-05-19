@@ -9,3 +9,23 @@
 p {
     padding: 4rem 0;
 }
+
+.inp {
+    text-shadow: none;
+    color: white;
+}
+
+.main-info-p {
+    text-align: left;
+    text-indent: 4em;
+    
+}
+
+.main-info-p2 {
+    text-align: center;
+    padding: 2em 4em 0 4em;
+}
+
+.above-btn-p {
+    padding-top: 0;
+}

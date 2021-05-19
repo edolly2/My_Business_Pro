@@ -31,7 +31,7 @@
                         <ul>
                             <li class="top-nav-li"><a href="home.html"><span class="dash">-</span> Home <span class="dash">-</span></a></li>
                             <li class="top-nav-li"><a href="#"><span class="dash">-</span> Accessibility <span class="dash">-</span></a></li>
-                            <li class="top-nav-li"><a href="#"><span class="dash">-</span> About <span class="dash">-</span></a></li>
+                            <li class="top-nav-li"><a href="about.html"><span class="dash">-</span> About <span class="dash">-</span></a></li>
                             <li class="top-nav-li"><a href="#"><span class="dash">-</span> Help <span class="dash">-</span></a></li>
                             <li class="top-nav-li"><a href="#"><span class="dash">-</span> Contact <span class="dash">-</span></a></li>
 
@@ -44,6 +44,23 @@
             </div>
         </header>
         <main>
+            <div class="signin-modal-cont">
+                <h2 class="form-title">Sign-In</h2>
+                <form action="#" class="signin-form">
+                    <label for="email" class="label-email">Email:</label><br/>
+                    <input type="email" name="email" id="email" value="" placeholder="example@email.com"><br/><br/>
+                    <label for="password" class="label-password">Password:</label><br/>
+                    <input type="password" name="password" id="password" value="" placeholder="********">
+                    <div class="signin-btn-cont">
+                        <div class="signin-link-cont">
+                            <p class="forgot"><a href="#" class="form-links">Forgot password?</a></p>
+                            <p class="create"><a href="#" class="form-links">Create an account?</a></p>
+                        </div>
+                        <input type="submit" name="submit" id="submit" value="submit" class="form-btns form-submit">
+                        <input type="button" name="cancel" id="cancel" value="cancel" class="form-btns form-cancel">
+                    </div>
+                </form>
+            </div>
             <div class="main-title-cont">
                 <h2>Get A Free Quote And Start A Website Build Today</h2>
             </div>
@@ -55,7 +72,7 @@
                         <a href="gettingstarted.html"><button class="get-started-btn btns">GET STARTED</button></a><br />
                     </div>
                     <p class="or">Or</p>
-                    <p class="learn-more"><a href="#" class="learn-more-link" title="Need Some Help?"><span class="lm-dash">-</span> LEARN MORE <span class="lm-dash">-</span></a></p>
+                    <p class="learn-more"><a href="help.html" class="learn-more-link" title="Need Some Help?"><span class="lm-dash">-</span> LEARN MORE <span class="lm-dash">-</span></a></p>
                 </div>
             </section>
         </main>
@@ -77,6 +94,7 @@
             </div>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
