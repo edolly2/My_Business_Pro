@@ -76,7 +76,7 @@ $(document).ready(() => {
         //     -one special character
         //     -at least 8 characters`);
         // }
-    }
+    // }
 
 // function isValid(str){
 //     return !/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(str);
