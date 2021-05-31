@@ -10,6 +10,11 @@ p {
     padding: 4rem 0;
 }
 
+.main-1-section {
+    display: flex;
+    justify-content: center;
+}
+
 .inp {
     text-shadow: none;
     color: white;
@@ -29,3 +34,4 @@ p {
 .above-btn-p {
     padding-top: 0;
 }
+

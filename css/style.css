@@ -60,19 +60,20 @@ body {
     background-attachment: fixed;
 }
 
-h1 {
-    font-size: clamp(4em, 3.5vw, 5em);
+h1,
+.form-title {
+    font-size: clamp(2.4em, 3.5vw, 5em);
 }
 
 h2 {
-    font-size: clamp(2.8em, 2.2vw, 3.2em);
+    font-size: clamp(1.8em, 2.2vw, 3.2em);
 }
 
 h3,
 h4,
 h5,
 h6 {
-    font-size: clamp(2em, 1.75vw, 2.8em);
+    font-size: clamp(1.2em, 1.75vw, 2.8em);
 }
 
 h1,
@@ -86,14 +87,24 @@ h6 {
 
 p,
 li,
-button {
-    font-size: clamp(1.4em, 1.2vw, 1.8em);
+button,
+label,
+a {
+    font-size: clamp(1.2em, 1.2vw, 1.8em);
 }
 
 p {
     line-height: 1.5;
 }
 
+input:focus {
+    outline: none;
+    box-shadow: 3px 3px 1px yellow, -3px -3px 1px yellow, 0px 3px 1px yellow, 3px 0px 1px yellow, -3px 0px 1px yellow, 0px -3px 1px yellow, 3px 2px 1px yellow, 2px 3px 1px yellow, 3px -2px 1px yellow, -2px 3px 1px yellow, -2px -3px 1px yellow, -3px -2px 1px yellow, -3px 2px 1px yellow, 2px -3px 1px yellow, 3px 1px 1px yellow, 1px 3px 1px yellow, -3px 1px 1px yellow, 1px -3px 1px yellow, 3px -1px 1px yellow, -1px 3px 1px yellow, -1px -3px 1px yellow, -3px -1px 1px yellow, 2px 2px 1px yellow, -2px -2px 1px yellow, -2px 2px 1px yellow, 2px -2px 1px yellow, 2px 1px 1px yellow, 1px 2px 1px yellow, -2px 1px 1px yellow, 1px -2px 1px yellow, -1px -2px 1px yellow, -2px -1px 1px yellow, 2px -1px 1px yellow, -1px 2px yellow, 1px 1px 1px yellow, -1px 1px 1px yellow, 1px -1px 1px yellow, -1px -1px 1px yellow, 2px 0px 1px yellow, 0px 2px 1px yellow, 0px -2px 1px yellow, -2px 0px 1px yellow, 1px 0px 1px yellow, 0px 1px 1px yellow, 0px -1px 1px yellow, -1px 0px 1px yellow;
+}
+
+a:hover {
+    color: yellow;
+}
 
 /* ------3-GLOBAL------ */
 /* -------------------- */
@@ -147,6 +158,10 @@ button {
     cursor: pointer;
 }
 
+hr {
+    width: 50%;
+}
+
 .cent-wrapper {
     width: 100%;
     display: flex;
@@ -154,16 +169,16 @@ button {
     align-items: center;
 }
 
-.selected,
-.dash {
+.selected {
     background-color: rgba(153, 153, 153, 0.5);
     text-shadow: 1px 1px 1px yellow, -1px 1px 1px yellow, 1px -1px 1px yellow, 0px 1px 1px yellow, 1px 0px 1px yellow, -0px 1px 1px yellow, 1px -0px 1px yellow, 0px -1px 1px yellow, -1px 0px 1px yellow, -0px -1px 1px yellow, -1px -0px 1px yellow, 0px 0px 1px yellow, -0px -0px 1px yellow, -0px 0px 1px yellow, 0px -0px 1px yellow, 0px 1px 1px yellow, 1px 0px 1px yellow, -1px 0px 1px yellow, 0px -1px 1px yellow, 0px 0px 1px yellow, 0px 0px 1px yellow, 0px -0px 1px yellow, -0px 0px 1px yellow, 0px 0px 1px yellow;
 }
 
-.dash {
-    visibility: visible;
-    background-color: transparent;
+.red {
+    color: #800000;
 }
+
+
 
 
 /* ------4-BUTTONS------ */
@@ -200,6 +215,25 @@ button {
 }
 
 .get-started-btn {}
+
+.signin-exit-cont {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.signin-exit-btn {
+    color: white;
+    font-size: clamp(3em, 2.6vw, 4em);
+    cursor: pointer;
+    background-color: #800000;
+    border-radius: 50%;
+    text-shadow: 2px 2px 2px #800000, -2px 2px 2px #800000, 2px -2px 2px #800000, 1px 2px 2px #800000, 2px 1px 2px #800000, -1px 2px 2px #800000, 2px -1px 2px #800000, 1px -2px 2px #800000, -2px 1px 2px #800000, -1px -2px 2px #800000, -2px -1px 2px #800000, 1px 1px 2px #800000, -1px -1px 2px #800000, -1px 1px 2px #800000, 1px -1px 2px #800000, 0px 2px 2px #800000, 2px 0px 2px #800000, -2px 0px 2px #800000, 0px -2px 2px #800000, 0px 1px 2px #800000, 1px 0px 2px #800000, 0px -1px 2px #800000, -1px 0px 2px #800000, 0px 0px 2px #800000;
+}
+
+.signin-exit-btn:hover {
+    color: yellow;
+    transform: scale(1.1);
+}
 
 /* ------5-LINKS------ */
 /* ------------------- */
@@ -299,7 +333,12 @@ header {
 
 .top-nav {
     width: 50%;
-    padding: 1rem;
+    padding: 0 1rem;
+    margin: 1rem 0;
+}
+
+#account {
+    display: none;
 }
 
 .top-nav ul {
@@ -310,18 +349,23 @@ header {
 }
 
 .top-nav li {
-    padding: 1rem 0.5rem;
-    text-shadow: 1px 1px 1px #ffffff, -1px 1px 1px #ffffff, 1px -1px 1px #ffffff, 0px 1px 1px #ffffff, 1px 0px 1px #ffffff, -0px 1px 1px #ffffff, 1px -0px 1px #ffffff, 0px -1px 1px #ffffff, -1px 0px 1px #ffffff, -0px -1px 1px #ffffff, -1px -0px 1px #ffffff, 0px 0px 1px #ffffff, -0px -0px 1px #ffffff, -0px 0px 1px #ffffff, 0px -0px 1px #ffffff, 0px 1px 1px #ffffff, 1px 0px 1px #ffffff, -1px 0px 1px #ffffff, 0px -1px 1px #ffffff, 0px 0px 1px #ffffff, 0px 0px 1px #ffffff, 0px -0px 1px #ffffff, -0px 0px 1px #ffffff, 0px 0px 1px #ffffff;
+    padding: 1rem 1.3rem;
+    color: yellow;
+    margin: 0.3rem 0;
+    text-shadow: 1px 1px 1px #050b1f, -1px 1px 1px #050b1f, 1px -1px 1px #050b1f, 0px 1px 1px #050b1f, 1px 0px 1px #050b1f, -0px 1px 1px #050b1f, 1px -0px 1px #050b1f, 0px -1px 1px #050b1f, -1px 0px 1px #050b1f, -0px -1px 1px #050b1f, -1px -0px 1px #050b1f, 0px 0px 1px #050b1f, -0px -0px 1px #050b1f, -0px 0px 1px #050b1f, 0px -0px 1px #050b1f, 0px 1px 1px #050b1f, 1px 0px 1px #050b1f, -1px 0px 1px #050b1f, 0px -1px 1px #050b1f, 0px 0px 1px #050b1f, 0px 0px 1px #050b1f, 0px -0px 1px #050b1f, -0px 0px 1px #050b1f, 0px 0px 1px #050b1f;
+    border-radius: 1.2rem;
+    border: 1px solid transparent;
+    cursor: pointer;
 }
 
 .top-nav li:hover {
-    text-shadow: 1px 1px 1px yellow, -1px 1px 1px yellow, 1px -1px 1px yellow, 0px 1px 1px yellow, 1px 0px 1px yellow, -0px 1px 1px yellow, 1px -0px 1px yellow, 0px -1px 1px yellow, -1px 0px 1px yellow, -0px -1px 1px yellow, -1px -0px 1px yellow, 0px 0px 1px yellow, -0px -0px 1px yellow, -0px 0px 1px yellow, 0px -0px 1px yellow, 0px 1px 1px yellow, 1px 0px 1px yellow, -1px 0px 1px yellow, 0px -1px 1px yellow, 0px 0px 1px yellow, 0px 0px 1px yellow, 0px -0px 1px yellow, -0px 0px 1px yellow, 0px 0px 1px yellow;
-    transform: translate(-0.1em, -0.1em);
-}
-
-.top-nav a {
-    padding: 1rem 0.3rem;
-    border-radius: 1em;
+    background: rgba(128, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* ------9-MAIN------ */
@@ -329,32 +373,32 @@ header {
 /* ------------------ */
 /* ------------------ */
 
-main {}
-
-.main-title-cont {
-    padding: 4em;
-}
-
 .main-title-cont h2 {
-    text-shadow: 2px 2px 2px #ffffff, -2px 2px 2px #ffffff, 2px -2px 2px #ffffff, 1px 2px 2px #ffffff, 2px 1px 2px #ffffff, -1px 2px 2px #ffffff, 2px -1px 2px #ffffff, 1px -2px 2px #ffffff, -2px 1px 2px #ffffff, -1px -2px 2px #ffffff, -2px -1px 2px #ffffff, 1px 1px 2px #ffffff, -1px -1px 2px #ffffff, -1px 1px 2px #ffffff, 1px -1px 2px #ffffff, 0px 2px 2px #ffffff, 2px 0px 2px #ffffff, -2px 0px 2px #ffffff, 0px -2px 2px #ffffff, 0px 1px 2px #ffffff, 1px 0px 2px #ffffff, 0px -1px 2px #ffffff, -1px 0px 2px #ffffff, 0px 0px 2px #ffffff;
+    text-shadow: 1px 1px 2px #ffffff, -1px 1px 2px #ffffff, 1px -1px 2px #ffffff, 0px 1px 2px #ffffff, 1px 0px 2px #ffffff, -1px -1px 2px white, -1px 0px 2px #ffffff, 0px -1px 2px #ffffff, 0px 0px 2px #ffffff;
+    font-weight: 900;
+    padding: 4.5rem;
 }
 
-.main-info-section {
+.home-info-section {
     display: flex;
     justify-content: center;
 }
 
 .main-info-cont {
     width: 50%;
-    background-color: rgba(153, 153, 153, 0.5);
+    /* background-color: rgba(153, 153, 153, 0.5); */
     border-radius: 1rem;
-    border: 2px solid #999;
+    /* border: 2px solid #999; */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
 }
 
 .main-info-p {
     padding: 4rem 4rem 0 4rem;
     color: white;
-    /* text-shadow: 2px 2px 2px #800000, -2px 2px 2px #800000, 2px -2px 2px #800000, 1px 2px 2px #800000, 2px 1px 2px #800000, -1px 2px 2px #800000, 2px -1px 2px #800000, 1px -2px 2px #800000, -2px 1px 2px #800000, -1px -2px 2px #800000, -2px -1px 2px #800000, 1px 1px 2px #800000, -1px -1px 2px #800000, -1px 1px 2px #800000, 1px -1px 2px #800000, 0px 2px 2px #800000, 2px 0px 2px #800000, -2px 0px 2px #800000, 0px -2px 2px #800000, 0px 1px 2px #800000, 1px 0px 2px #800000, 0px -1px 2px #800000, -1px 0px 2px #800000, 0px 0px 2px #800000; */
 }
 
 .or {
@@ -376,6 +420,8 @@ footer {
 .copyright-cont {
     margin: 0 4rem;
     color: #ffffff;
+    position: fixed;
+    bottom: 1rem;
 }
 
 /* SOCIAL MEDIA */
@@ -383,15 +429,20 @@ footer {
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
-    align-items: center;
     margin: 0 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .social-cont i {
-    margin: 0 0 4rem;
+    margin: 0;
     padding: 0 2rem;
     font-size: clamp(3.2rem, 4vw, 5.6rem);
     text-shadow: 2px 2px 2px #800000, -2px 2px 2px #800000, 2px -2px 2px #800000, 1px 2px 2px #800000, 2px 1px 2px #800000, -1px 2px 2px #800000, 2px -1px 2px #800000, 1px -2px 2px #800000, -2px 1px 2px #800000, -1px -2px 2px #800000, -2px -1px 2px #800000, 1px 1px 2px #800000, -1px -1px 2px #800000, -1px 1px 2px #800000, 1px -1px 2px #800000, 0px 2px 2px #800000, 2px 0px 2px #800000, -2px 0px 2px #800000, 0px -2px 2px #800000, 0px 1px 2px #800000, 1px 0px 2px #800000, 0px -1px 2px #800000, -1px 0px 2px #800000, 0px 0px 2px #800000;
+}
+
+.social-cont a {
+    margin-bottom: -1rem;
 }
 
 .social-cont i:hover {
@@ -408,11 +459,16 @@ footer {
 /* -------------------- */
 /* -------------------- */
 /* -------------------- */
+
 .form-title {
     color: white;
+    padding: 0 0 2rem 0;
+    margin-top: -2rem;
+    text-shadow: 2px 2px 2px #800000, -2px 2px 2px #800000, 2px -2px 2px #800000, 1px 2px 2px #800000, 2px 1px 2px #800000, -1px 2px 2px #800000, 2px -1px 2px #800000, 1px -2px 2px #800000, -2px 1px 2px #800000, -1px -2px 2px #800000, -2px -1px 2px #800000, 1px 1px 2px #800000, -1px -1px 2px #800000, -1px 1px 2px #800000, 1px -1px 2px #800000, 0px 2px 2px #800000, 2px 0px 2px #800000, -2px 0px 2px #800000, 0px -2px 2px #800000, 0px 1px 2px #800000, 1px 0px 2px #800000, 0px -1px 2px #800000, -1px 0px 2px #800000, 0px 0px 2px #800000;
 }
 
 .signin-modal-cont {
+    z-index: 2;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -421,13 +477,13 @@ footer {
     background-color: #050b1f;
     border-radius: 0.8em;
     border: 2px solid #800000;
-    width: 70vw;
-    height: 50vh;
+    width: 40vw;
+    height: 60vh;
     display: none;
+    box-shadow: 3px 3px 10px black;
 }
 
 .signin-form {
-    /* display: block; */
     background-color: transparent;
     width: 100%;
     height: 100%;
@@ -441,12 +497,13 @@ footer {
 
 /* BUTTONS/LINKS */
 .signin-btn-cont {
-    padding-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
 }
 
 .form-btns {
     font-size: 1.6rem;
-    margin-top: 1rem;
     cursor: pointer;
 }
 
@@ -454,21 +511,21 @@ footer {
     margin-left: 0.5rem;
 }
 
-.form-submit {}
+.form-submit {
+    padding: 1rem 5rem;
+}
 
 .signin-link-cont {
     display: flex;
     justify-content: center;
+    padding-top: 1rem;
+    white-space: nowrap;
 }
 
 .form-links {
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: cornflowerblue;
-    
-    /* padding-top: 2rem; */
 }
-
-.create {}
 
 .forgot {
     padding-right: 2rem;
@@ -476,15 +533,43 @@ footer {
 
 #password {
     margin-bottom: 1rem;
-    /* margin-top: 1rem; */
 }
 
-#email {
-    /* margin-top: 4rem; */
+.details-form-cont {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 90vw;
+    height: 90vh;
+    background-color: #fff;
+    border-radius: 1.2rem;
+    display: none;
 }
 
-.label-password {
-    text-align: left;
+.submit-modal-cont {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 50vw;
+    height: 20vh;
+    background-color: #fff;
+    z-index: 5;
+    display: none;
+}
+
+.key-cont {
+    border: 2px solid black;
+    border-radius: 1.2rem;
+    width: 20%;
+    min-height: 20vh;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
 }
 
 /* ------12-MEDIA Q's------ */
@@ -541,3 +626,32 @@ footer {
 
 /* VARIOUS */
 @media screen and (max-width: 984px) {}
+
+@media screen and (max-width: 850px) {
+    .portal-btn-cont {
+        display: none;
+    }
+
+    #account {
+        display: block;
+    }
+}
+
+
+
+.main-1-title-cont {
+    padding: 4em;
+}
+
+.main-1-title-cont h2 {
+    text-shadow: 2px 2px 2px #ffffff, -2px 2px 2px #ffffff, 2px -2px 2px #ffffff, 1px 2px 2px #ffffff, 2px 1px 2px #ffffff, -1px 2px 2px #ffffff, 2px -1px 2px #ffffff, 1px -2px 2px #ffffff, -2px 1px 2px #ffffff, -1px -2px 2px #ffffff, -2px -1px 2px #ffffff, 1px 1px 2px #ffffff, -1px -1px 2px #ffffff, -1px 1px 2px #ffffff, 1px -1px 2px #ffffff, 0px 2px 2px #ffffff, 2px 0px 2px #ffffff, -2px 0px 2px #ffffff, 0px -2px 2px #ffffff, 0px 1px 2px #ffffff, 1px 0px 2px #ffffff, 0px -1px 2px #ffffff, -1px 0px 2px #ffffff, 0px 0px 2px #ffffff;
+}
+
+.main1 {
+    display: none;
+}
+
+.main-1-section {
+    display: flex;
+    justify-content: center;
+}

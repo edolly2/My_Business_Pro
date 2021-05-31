@@ -6,7 +6,14 @@ const portalBtn = $('.portal-btn');
 const signinModal = $('.signin-modal-cont');
 const signinCancel = $('#cancel');
 const signinSubmit = $('#submit');
-
+const mainHome = $('.main-home');
+const main1 = $('.main1');
+const getStartedBtn = ('.get-started-btn');
+const signinExitBtn = ('.signin-exit-btn');
+const account = $('#account');
+const detailsForm = $('.details-form-cont');
+const detailsFormSubmit = $('#details-submit');
+const submitModal = $('.submit-modal-cont');
 
 $(document).ready(() => {
     $(dash).css('visibility', 'hidden');
@@ -33,8 +40,37 @@ $(document).ready(() => {
         $(signinModal).toggle(500);
     });
 
-    $(signinCancel).on('click', () => {
+    $(account).on('click', () => {
+        $(signinModal).toggle(500);
+    });
+
+    $(signinExitBtn).on('click', () => {
         $(signinModal).hide(500);
+    });
+
+let signedin = true;
+    $(getStartedBtn).on('click', () => {
+        if(signedin === false) {
+            $(signinModal).show(500);
+        }
+        else {
+            $(detailsForm).show(500);
+        }
+    });
+
+    $(detailsFormSubmit).on('click', () => {
+        $(detailsForm).hide(500);
+        setTimeout(() => {
+            $(submitModal).show(500);
+            $(submitModal).delay(4000).hide(500);
+        }, 1000);
+    });
+
+    // if($('.main1:visible')) {
+    //     $(mainHome).hide();
+    // }
+    $('.details-exit-btn').on('click', () => {
+        $(detailsForm).hide(500);
     });
 });
 // let format = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
@@ -88,3 +124,11 @@ $(document).ready(() => {
 //         ValidatePassword();
 //     });
 // });
+
+const slider = document.getElementById("budget")
+const output = document.getElementById("budget-amount")
+output.innerHTML = slider.value;
+                        
+slider.oninput = function() {
+output.innerHTML = this.value;
+}
