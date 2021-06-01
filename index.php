@@ -91,6 +91,9 @@ $_SESSION['csrf_token_time'] = time();
                 <div class="top-title-cont">
                     <h1>Dolly Web Development</h1>
                 </div>
+                <div class="hamburger-cont">
+                <i class="fas fa-bars hamburger"></i>
+                </div>
                 <div class="cent-wrapper">
                     <nav class="top-nav">
                         <ul>
@@ -111,6 +114,10 @@ $_SESSION['csrf_token_time'] = time();
             </div>
         </header>
         <main>
+
+        
+
+
             <div class="signin-modal-cont">
                 <div class="signin-exit-cont">
                     <i class="fas fa-times-circle signin-exit-btn"></i>
@@ -148,11 +155,11 @@ $_SESSION['csrf_token_time'] = time();
                     <div class="details-form-title-cont">
                         <h2>Details Form</h2>
                     </div>
-                    <label for="name">Name: <span class="red">*</span></label>
+                    <label for="name"><span class="red">*</span>Name:</label>
                     <input type="text" name="name" id="name"><br/>
-                    <label for="details-email">Email: <span class="red">*</span></label>
+                    <label for="details-email"><span class="red">*</span>Email:</label>
                     <input type="email" name="details-email" id="details-email"><br/>
-                    <label for="phone">Phone Number: <span class="red">*</span></label>
+                    <label for="phone"><span class="red">*</span>Phone Number:</label>
                     <input type="tel" name="phone" id="phone"><br/>
                     <label for="company">Company Name:</label>
                     <input type="text" name="company" id="company"><br/>
@@ -185,7 +192,7 @@ $_SESSION['csrf_token_time'] = time();
                     <input type="radio" name="deadline" id="none" value="none">
                     <label for="none">None</label><br/>
                     <hr/>
-                    <label for="additional">-Briefly Describe Your Website or App Vision- <span class="red">*</span></label><br/>
+                    <label for="additional"><span class="red">*</span>-Briefly Describe Your Website or App Vision-</label><br/>
                     <textarea name="additionl" id="additional" cols="30" rows="10"></textarea><br/>
                     <input type="submit" value="Submit" name="details-submit" id="details-submit">                    
                 </form>
@@ -235,6 +242,32 @@ $_SESSION['csrf_token_time'] = time();
                     target="_blank"><i class="fab fa-linkedin last" title="LinkedIn"></i></a>
             </div>
         </footer>
+    
+
+    <!-- HAMBURGER MENU -->
+    <div class="hamburger-menu-cont">
+        <h2>Main Menu</h2>
+        <div class="user-icon-cont-center">
+        <div class="user-icon-cont">
+            <i class="fas fa-user user-icon"></i>
+        </div>
+        </div>
+            <p>Not Signed-In</p>
+            <hr/>
+        <nav class="hamburger-nav">
+            <ul>
+                <li class="hamburger-nav-li">HOME</li>
+                <li class="hamburger-nav-li" id="account">ACCOUNT</li>
+                <li class="hamburger-nav-li">ACCESSIBILITY</li>
+                <li class="hamburger-nav-li">ABOUT</li>
+                <li class="hamburger-nav-li">HELP</li>
+                <li class="hamburger-nav-li">CONTACT</li>
+            </ul>
+        </nav>
+        <div class="hamburger-menu-hide-cont">
+            <i class="fas fa-chevron-up hamburger-menu-hide-btn"></i>
+        </div>
+    </div>
     </div>
 </body>
 

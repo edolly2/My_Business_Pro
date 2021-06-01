@@ -113,6 +113,7 @@ $_SESSION['csrf_token_time'] = time();
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
     <script src="js/jquery.js" defer></script>
     <script src="js/app.js" defer></script>
 
@@ -120,29 +121,40 @@ $_SESSION['csrf_token_time'] = time();
 
 <body>
     <div id="page">
-                <h2 class="form-title">Sign-In</h2>
+            <div class="signup-form-cont">
+            <div class="signin-exit-cont">
+                    <i class="fas fa-times-circle signin-exit-btn"></i>
+                </div>
+                <h2 class="form-title">Sign-Up</h2>
                 <form role="form" method="post">
                         <input type="hidden" name="csrf_token" value="<?php echo $token; ?>">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="User Name" name="username" type="text" autofocus value="<?php if(isset($_POST['username'])){ echo $_POST['username']; } ?>">
+                                <label for="username">Username</label><br/>
+                                <input class="form-control" placeholder="Username" name="username" type="text" autofocus value="<?php if(isset($_POST['username'])){ echo $_POST['username']; } ?>">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="email" type="email" value="<?php if(isset($_POST['email'])){ echo $_POST['email']; } ?>">
+                                <label for="email">E-mail</label><br/>
+                                <input class="form-control" placeholder="example@email.com" name="email" type="email" value="<?php if(isset($_POST['email'])){ echo $_POST['email']; } ?>">
                             </div>
                             <div class="form-group">
+                                <label for="mobile">Phone Number</label><br/>
                                 <input class="form-control" placeholder="Mobile" name="mobile" type="text" value="<?php if(isset($_POST['mobile'])){ echo $_POST['mobile']; } ?>">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                            <label for="password">Password</label><br/>
+                                <input class="form-control" placeholder="********" name="password" type="password" value="">
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Repeat Password" name="passwordr" type="password" value="">
+                                <label for="passwordr">Re-type Password</label><br/>
+                                <input class="form-control" placeholder="********" name="passwordr" type="password" value="">
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Register" />
+                            <input type="submit" class="btns btn-lg btn-success btn-block" value="Register" />
+                            <button class="btns" id="sign-up-cancel-btn"><a href="index.php">Cancel</a></button>
                         </fieldset>
                     </form>
+            </div>
             </div>
 
 

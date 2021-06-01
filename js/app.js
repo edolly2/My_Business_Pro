@@ -14,6 +14,14 @@ const account = $('#account');
 const detailsForm = $('.details-form-cont');
 const detailsFormSubmit = $('#details-submit');
 const submitModal = $('.submit-modal-cont');
+// REGISTER PAGE
+const signupCancelBtn = $('#sign-up-cancel-btn')
+
+// HMABURGER MENU
+const hamburgerMenu = $('.hamburger-menu-cont');
+const hamburgerMenuShowBtn = $('.hamburger');
+const hamburgerMenuHideBtn = $('.hamburger-menu-hide-btn');
+const hamburgerMenuHideCont = $('.hamburger-menu-hide-cont');
 
 $(document).ready(() => {
     $(dash).css('visibility', 'hidden');
@@ -66,16 +74,54 @@ let signedin = true;
         }, 1000);
     });
 
-    // if($('.main1:visible')) {
-    //     $(mainHome).hide();
-    // }
-    $('.details-exit-btn').on('click', () => {
-        $(detailsForm).hide(500);
+        $('.details-exit-btn').on('click', () => {
+            $(detailsForm).hide(500);
+        });
+    
+    });
+
+
+
+    const slider = document.getElementById("budget")
+    const output = document.getElementById("budget-amount")
+    output.innerHTML = slider.value;
+                            
+    slider.oninput = function() {
+    output.innerHTML = this.value;
+    }
+
+// REGISTER PAGE
+
+$(document).ready(() => {
+    $(signupCancelBtn).on('click', () => {
+        $(document).location.href = "http://localhost/MY_BUSINESS_PRO/index.php";
     });
 });
-// let format = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
-// const regex = new RegExp('foo*');
-// const format = /(?=.*[!@#$%^&*])/;
+
+// HAMBURGER MENU
+
+$(document).ready(() => {
+    $(hamburgerMenuShowBtn).on('click', () => {
+        $(hamburgerMenu).slideDown(500);
+        $(hamburgerMenuShowBtn).hide();
+        setTimeout(() => {
+            $(hamburgerMenuHideCont).delay(500).fadeIn(500);
+        }, 400);
+    });
+
+    $(hamburgerMenuHideBtn).on('click', () => {
+        $(hamburgerMenu).slideUp(500);
+        $(hamburgerMenuHideCont).fadeOut(500);
+        setTimeout(() => {
+            $(hamburgerMenuShowBtn).delay(500).fadeIn(500);
+        }, 400);
+    });
+});
+
+
+    // let format = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
+    // const regex = new RegExp('foo*');
+    // const format = /(?=.*[!@#$%^&*])/;
 // let password = document.getElementsByName('password')[0].value;
 // let email = document.getElementsByName('email')[0].value;
 
@@ -124,11 +170,3 @@ let signedin = true;
 //         ValidatePassword();
 //     });
 // });
-
-const slider = document.getElementById("budget")
-const output = document.getElementById("budget-amount")
-output.innerHTML = slider.value;
-                        
-slider.oninput = function() {
-output.innerHTML = this.value;
-}
